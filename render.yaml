@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: murakami
+    env: static
+    plan: free  # 無料プラン
+    regions: oregon  # デプロイ先リージョンをオレゴンに設定
+    routes:
+      - type: rewrite
+        source: "/arc-sw.js"
+        destination: "https://arc.io/arc-sw.js"
