@@ -4,3 +4,4 @@ services:
     env: python
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     region: Oregon  # リージョンの指定
+    plan: free
