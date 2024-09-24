@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: Blue-sky
-    env: static
-    plan: free  # 無料プラン
-    region: oregon  # デプロイ先リージョンをオレゴンに設定
+    name: red-sky
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: "npm install"  # 必要に応じてビルドコマンドを設定
+    startCommand: "node index.js"  # アプリケーションを起動するコマンド
     routes:
       - type: rewrite
         source: "/arc-sw.js"
