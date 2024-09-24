@@ -4,6 +4,3 @@ services:
     env: python
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     region: Oregon  # リージョンの指定
-    routes:
-     - src: ./arc-sw.js
-      dest: https://arc.io/arc-sw.js
