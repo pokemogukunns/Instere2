@@ -1,12 +1,10 @@
 services:
   - type: web
-    name: red-sky
-    env: node
-    plan: free
-    region: oregon
-    buildCommand: "npm install"  # 必要に応じてビルドコマンドを設定
-    startCommand: "node index.js"  # アプリケーションを起動するコマンド
+    name: your-service-name
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    region: Oregon  # リージョンの指定
     routes:
-      - type: rewrite
-        source: "/arc-sw.js"
-        destination: "https://arc.io/arc-sw.js"
+      - src: /arc-sw.js
+        dest: https://arc.io/arc-sw.js
