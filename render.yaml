@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: murakami
+    name: Blue-sky
     env: static
-    region: Oregon
-    plan: free
-      - type: rewrite
-        source: "/arc-sw.js"
-        destination: "https://arc.io/arc-sw.js"
+    plan: free  # 無料プラン
+    region: oregon  # デプロイ先リージョンをオレゴンに設定
+    routes:
+      - src: "/arc-sw.js"
+        dest: "https://arc.io/arc-sw.js"
