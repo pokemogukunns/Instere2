@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: Instere
-    env: node
-    buildCommand: "npm install"
-    startCommand: "node arc-sw.js"
+    name: Instere  # サービスの名前
+    env: python      # Python環境を使用
+    buildCommand: "pip install -r requirements.txt"  # 必要な依存関係のインストール
+    startCommand: "python teikou.py"  # teikou.py を実行
     region: Oregon
     plan: free
     autoDeploy: true
